@@ -1,0 +1,21 @@
+{"id": "Q1", "question": "Bug fix comment 中的 Root Cause 需要包含哪些内容？", "ground_truth": "需要包含技术分析（如日志、代码逻辑错误、算法缺陷、依赖库冲突）以及需求层面的分析（是否因需求理解偏差或变更未同步导致功能遗漏或异常）。", "source_hint": "Bug fix与comments流转要求.docx", "difficulty": "easy"}
+{"id": "Q2", "question": "Bug fix 流程中的 Test Verification 有哪些关键要求？", "ground_truth": "需要明确修改影响范围并完成自测；需要列出回归测试场景；并需标注修复集成的 Daily Build 版本号用于验证。", "source_hint": "Bug fix与comments流转要求.docx", "difficulty": "easy"}
+{"id": "Q3", "question": "地图业务相关 bug 在流转流程上有哪些限制？", "ground_truth": "不能跨业务链路；地图业务只能流转给直接依赖的模块；间接依赖的业务由直接依赖的业务负责流转。", "source_hint": "Bug fix与comments流转要求.docx", "difficulty": "medium"}
+{"id": "Q4", "question": "VCU 与 ADM_HC 的通信方式是什么？", "ground_truth": "采用 UDP + SOME/IP-TP + Proto 的方式；大包通过 SOME/IP-TP 进行分片与重组。", "source_hint": "NDLB Map ServiceCLEA spec - v1.0.docx", "difficulty": "easy"}
+{"id": "Q5", "question": "SD Map 进程启动后需要进行哪些 Topic 注册相关操作？", "ground_truth": "启动后需向 Service Bus 注册全部 Topic；注册完成后发送 PROCESS_START 广播；Map Service 根据广播执行 Topic 订阅。", "source_hint": "NDLB Map ServiceCLEA spec - v1.0.docx", "difficulty": "medium"}
+{"id": "Q6", "question": "如果 SD Map 在订阅之前发布数据，系统行为是什么？", "ground_truth": "Bus 会缓存数据；当 Map Service 完成订阅后会收到缓存；是否立即透传需与高德确认。", "source_hint": "NDLB Map ServiceCLEA spec - v1.0.docx", "difficulty": "medium"}
+{"id": "Q7", "question": "LBS 系统支持哪几种昼夜模式？", "ground_truth": "支持跟随系统昼夜模式、强制白天模式、强制黑夜模式。", "source_hint": "PIS-2116_Location Based Service_A-V0.0.2.3.docx", "difficulty": "easy"}
+{"id": "Q8", "question": "家/公司引导设置在什么条件下会触发？", "ground_truth": "用户未设置家/公司；非节假日；并且处于通勤时间（6-10 点、17-24 点）。", "source_hint": "PIS-2116_Location Based Service_A-V0.0.2.3.docx", "difficulty": "medium"}
+{"id": "Q9", "question": "BL 引擎日志可以通过哪些方式导出？", "ground_truth": "可使用 adb pull 导出；或通过工程面板将日志复制到 U 盘。", "source_hint": "报AI灵图bug 日志要求&手顺1.0.docx", "difficulty": "easy"}
+{"id": "Q10", "question": "定位类问题通常需要抓取哪些类型的日志？", "ground_truth": "需要抓取 gmlogger、AutoMap/Gbl/bllog、GNSS/Location 系统日志（使用 setprop 设置为 V）、CAN Log。", "source_hint": "报AI灵图bug 日志要求&手顺1.0.docx", "difficulty": "medium"}
+{"id": "Q11", "question": "PatchType 在代码提交规范中有哪些取值？", "ground_truth": "包括 Feature、Bugfix (BBug)、Performance、Refactoring。", "source_hint": "代码提交流程和规范.docx", "difficulty": "easy"}
+{"id": "Q12", "question": "hmi_development_release2 分支允许合入哪些优先级的需求？", "ground_truth": "仅允许合入 P1 和 P2 需求。", "source_hint": "分支策略.pdf", "difficulty": "easy"}
+{"id": "Q13", "question": "高德地图推包流程中的 adb 操作步骤包括哪些？", "ground_truth": "包括 adb root、adb remount、删除 oat 文件、重命名旧 apk、adb push 新 apk、adb shell sync、重启 VCU。", "source_hint": "高德地图推包教程.docx", "difficulty": "easy"}
+{"id": "LBS-E1", "question": "LBS 中个性化车标支持哪些模式？", "ground_truth": "支持系统默认车标、车速车标（仪表车速显示）、品牌车标等多种类型。", "source_hint": "PIS-2116_Location Based Service_A-V0.0.2.3.docx", "difficulty": "easy"}
+{"id": "LBS-E2", "question": "路线偏好设置包含哪些可配置项？", "ground_truth": "包括路线偏好、避开限行、车牌号码设置、车辆动力类型、路况概览模式切换、自动比例尺开关等。", "source_hint": "PIS-2116_Location Based Service_A-V0.0.2.3.docx", "difficulty": "medium"}
+{"id": "LBS-E3", "question": "LBS 的避开限行开关逻辑是什么？", "ground_truth": "用户可以开启或关闭避开限行策略，用于路径规划时避免限行路段。", "source_hint": "PIS-2116_Location Based Service_A-V0.0.2.3.docx", "difficulty": "medium"}
+{"id": "LBS-E4", "question": "收藏点标注开关的作用是什么？", "ground_truth": "允许用户控制地图界面是否显示已收藏地点的标注。", "source_hint": "PIS-2116_Location Based Service_A-V0.0.2.3.docx", "difficulty": "easy"}
+{"id": "LBS-E5", "question": "发起路径规划的触发条件有哪些？", "ground_truth": "需要用户选择目的地，并确保导航服务已启动，系统随后会提交路径规划请求。", "source_hint": "PIS-2116_Location Based Service_A-V0.0.2.3.docx", "difficulty": "medium"}
+{"id": "LBS-E6", "question": "退出导航通常由哪些操作触发？", "ground_truth": "包括用户手动退出导航、导航到达目的地、或系统状态切换导致导航自动结束。", "source_hint": "PIS-2116_Location Based Service_A-V0.0.2.3.docx", "difficulty": "medium"}
+{"id": "LBS-E7", "question": "快捷导航设置在 LBS 中起到什么作用？", "ground_truth": "允许用户提前配置偏好，提高路径规划效率，如偏好路线类型或避开策略。", "source_hint": "PIS-2116_Location Based Service_A-V0.0.2.3.docx", "difficulty": "easy"}
+{"id": "LBS-E8", "question": "用户触发模拟导航时，系统会进行哪些流程？", "ground_truth": "系统会构建模拟路径，进入模拟导航模式，并支持暂停与继续等操作。", "source_hint": "PIS-2116_Location Based Service_A-V0.0.2.3.docx", "difficulty": "medium"}
